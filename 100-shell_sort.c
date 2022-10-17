@@ -12,7 +12,7 @@
  */
 void shell_sort(int *array, size_t size)
 {
-    size_t i, j, gap = 0;
+    size_t i, j, temp, gap = 0;
 
     if (array == NULL || size < 2)
         return;
@@ -22,7 +22,7 @@ void shell_sort(int *array, size_t size)
 
     for ( i = gap; i < size; i++ )
     {
-        int temp = array[i];
+        temp = array[i];
 
         for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
                 array[j] = array[j - gap];
