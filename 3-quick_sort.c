@@ -8,45 +8,23 @@
  * 
  * Return: a sorted list
  */
-
-/* A utility function to swap two elements */
-void swap(int* a, int* b)
+void quick_sort(int *array, size_t size)
 {
-    int t = *a;
-    *a = *b;
-    *b = t;
+    if (!array || size < 2)
+        return;
+    
+    quickSort(array, 0, size - 1, size);
 }
   
-/* This function takes last element as pivot, places
-the pivot element at its correct position in sorted
-array, and places all smaller (smaller than pivot)
-to left of pivot and all greater elements to right
-of pivot */
-int partition(int arr[], int low, int high, size_t size)
-{
-    int i, j;
-    int pivot = arr[high]; /* pivot */
-    i = (low - 1); 
-        /* Index of smaller element and indicates
-         the right position of pivot found so far
-        */
-  
-    for (j = low; j <= high - 1; j++) {
-        /* If current element is smaller than the pivot */
-        if (arr[j] < pivot) {
-            i++; 
-            swap(&arr[i], &arr[j]);
-        }
-    }
-    swap(&arr[i + 1], &arr[high]);
-    print_array(arr, size);
-    return (i + 1);
-}
-  
-/* The main function that implements QuickSort
-arr[] --> Array to be sorted,
-low --> Starting index,
-high --> Ending index */
+/**
+ * quicksort - function that sorts an array of integers
+ * in ascending order using the Quick sort algorithm
+ * @array: pointer to the array to sort
+ * @low: start of the array
+ * @high: end of the array
+ * @size: size of the array
+ * Return: nothing void
+ */
 void quickSort(int arr[], int low, int high, size_t size)
 {
     if (low < high) {
@@ -61,10 +39,43 @@ void quickSort(int arr[], int low, int high, size_t size)
     }
 }
 
-void quick_sort(int *array, size_t size)
+/**
+ * swap - function that swap value
+ * @a: pointer to the first value
+ * @b: pointer to the second value
+ * Return: nothing void
+ */
+void swap(int* a, int* b)
 {
-    if (!array || size < 2)
-        return;
-    
-    quickSort(array, 0, size - 1, size);
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+/**
+ * partition - function that partition an array of int
+ * and swap the value
+ * @array: array to partition
+ * @low: beggining of the array
+ * @high: end of the array
+ * @size: size of the array
+ * Return: returns the nwes index oh the value
+ */
+int partition(int arr[], int low, int high, size_t size)
+{
+    int i, j;
+    int pivot = arr[high]; 
+    i = (low - 1); 
+        
+  
+    for (j = low; j <= high - 1; j++) {
+        /* If current element is smaller than the pivot */
+        if (arr[j] < pivot) {
+            i++; 
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    print_array(arr, size);
+    return (i + 1);
 }
