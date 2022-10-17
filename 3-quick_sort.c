@@ -43,7 +43,6 @@ void quicksort(int *array, int low, int high, size_t size)
  * @b: pointer to the second value
  * Return: nothing void
  */
-
 void swap(int *a, int *b)
 {
 	int tmp;
