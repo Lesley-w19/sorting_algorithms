@@ -35,5 +35,4 @@ void selection_sort(int *pmArray, size_t size)
                    
             }
         } 
-
 }
