@@ -16,9 +16,7 @@ size_t i, j, temp, gap = 0;
 int val;
 
 if (array == NULL || size < 2)
-{
 return;
-}
 
 while (gap <= size / 3)
 {
