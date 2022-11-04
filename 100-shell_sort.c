@@ -17,12 +17,12 @@ int val;
 
 if (array == NULL || size < 2)
 {
-        return;
+return;
 }
 
 while (gap <= size / 3)
 {
-		gap = gap * 3 + 1;
+gap = gap * 3 + 1;
 }
 
 while (gap > 0)
@@ -31,7 +31,6 @@ while (gap > 0)
 for (i = gap; i < size; i++)
 {
 val = array[i];
-
 j = i;
 
 while (j > gap - 1 && array[j - gap] >= val)
