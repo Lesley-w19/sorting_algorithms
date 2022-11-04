@@ -8,11 +8,11 @@
  */
 void swap(int* a, int* b)
 {
-    int temp;
+int temp;
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
+temp = *a;
+*a = *b;
+*b = temp;
 }
 
 /**
@@ -26,20 +26,20 @@ void swap(int* a, int* b)
  */
 int partition(int *array, int low, int high, size_t size)
 {
-    int pivot = array[high]; 
-    int i = (low - 1); 
-    int j;       
+int pivot = array[high]; 
+int i = (low - 1); 
+int j;       
   
-   for (j = low; j <= high - 1; j++) {
+for (j = low; j <= high - 1; j++) {
        
-        if (array[j] < pivot) {
-            i++;
-            swap(&array[i], &array[j]);
-            print_array(array, size);
-        }
-    }
-    swap(&array[i + 1], &array[high]);
-    return (i + 1);
+if (array[j] < pivot) {
+i++;
+swap(&array[i], &array[j]);
+print_array(array, size);
+}
+}
+swap(&array[i + 1], &array[high]);
+return (i + 1);
 }
 /**
  * quickSort - function that sorts an array of integers
@@ -52,13 +52,13 @@ int partition(int *array, int low, int high, size_t size)
  */
 void quickSort(int *array, int low, int high, size_t size)
 {
-    int index;
-    if (low < high) {
-        index = partition(array, low, high, size);
+int index;
+if (low < high) {
+index = partition(array, low, high, size);
   
-        quickSort(array, low, index - 1, size);
-        quickSort(array, index + 1, high, size);
-    }
+quickSort(array, low, index - 1, size);
+quickSort(array, index + 1, high, size);
+}
 }
 
 /**
@@ -72,9 +72,9 @@ void quickSort(int *array, int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+if (array == NULL || size < 2)
+return;
     
-    quickSort(array, 0, size - 1, size);
+quickSort(array, 0, size - 1, size);
 }
 
