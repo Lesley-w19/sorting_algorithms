@@ -23,7 +23,7 @@ min = i;
 for (j = i + 1; j < size; j++)
 {
 if (array[j] < array[min])
-                    min = j;
+min = j;
                 
 if (min != i)
 {
