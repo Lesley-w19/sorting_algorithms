@@ -15,14 +15,10 @@ size_t i, j;
 int temp;
 
 if (!array)
-{
 return;
-}
 
 if (size == 0 || size == 1)
-{
 return;
-}
 
 for (i = 0; i < size - 1; i++)
 {
