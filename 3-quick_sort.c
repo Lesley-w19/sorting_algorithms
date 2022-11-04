@@ -6,7 +6,7 @@
  * @b: pointer to the second value
  * Return: nothing void
  */
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
 int temp;
 
@@ -26,12 +26,12 @@ temp = *a;
  */
 int partition(int *array, int low, int high, size_t size)
 {
-int pivot = array[high]; 
-int i = (low - 1); 
-int j;       
-  
+int pivot = array[high];
+int i = (low - 1);
+int j;
+
 for (j = low; j <= high - 1; j++) {
-       
+
 if (array[j] < pivot) {
 i++;
 swap(&array[i], &array[j]);
@@ -55,7 +55,7 @@ void quickSort(int *array, int low, int high, size_t size)
 int index;
 if (low < high) {
 index = partition(array, low, high, size);
-  
+
 quickSort(array, low, index - 1, size);
 quickSort(array, index + 1, high, size);
 }
@@ -74,7 +74,6 @@ void quick_sort(int *array, size_t size)
 {
 if (array == NULL || size < 2)
 return;
-    
+
 quickSort(array, 0, size - 1, size);
 }
-
