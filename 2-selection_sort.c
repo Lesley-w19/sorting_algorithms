@@ -5,7 +5,7 @@
  *
  * @array: the array
  * @size: size of the array
- * 
+ *
  * Return: list sorted by selection sort ascending order
  */
 void selection_sort(int *pmArray, size_t size)
